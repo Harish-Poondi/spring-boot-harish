@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>EPF Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Card-like container (optional) -->
+    <div class="card" id="calculation">
+      <h2>EPF Calculator</h2>
+
+      <form id="epfForm">
+        
+        <!-- Make sure each row is in .form-group -->
+        <div class="form-group">
+          <label for="currentBalance">Current Balance:</label>
+          <input type="number" id="currentBalance" required step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="salary">Salary:</label>
+          <input type="number" id="salary" required step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="annualIncrease">Annual Increase (%):</label>
+          <input type="number" id="annualIncrease" required step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="rateOfInterest">Rate of Interest (%):</label>
+          <input type="number" id="rateOfInterest" required step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="currentAge">Current Age:</label>
+          <input type="number" id="currentAge" required min="18" max="100">
+        </div>
+
+        <div class="form-group">
+          <label for="retirementAge">Retirement Age:</label>
+          <input type="number" id="retirementAge" required min="40" max="70">
+        </div>
+
+        <div class="form-group">
+          <label for="voluntaryContribution">Voluntary PF Contribution:</label>
+          <input type="number" id="voluntaryContribution" required step="0.01">
+        </div>
+
+        <div class="form-group">
+          <label for="employeeContributionPercent">Employee Contribution %:</label>
+          <input type="number" id="employeeContributionPercent" value="12" readonly>
+        </div>
+
+        <div class="form-group">
+          <label for="employerContributionPercent">Employer Contribution %:</label>
+          <input type="number" id="employerContributionPercent" value="3.67" readonly>
+        </div>
+
+        <button type="submit" aria-label="Calculate EPF Balance">Calculate</button>
+      </form>
+    </div>
+
+    <!-- Chart container -->
+    <div class="card" id="chartContainer">
+      <h3>Approx. EPF Balance at Age <span id="retAge">XX</span></h3>
+      <h3> Rs.<span id="balanceAmount">0</span></h3>
+      <canvas id="epfChart"></canvas>
+    </div>
+  </div>
+
+  <!-- Script File -->
+  <script defer src="script.js"></script>
+
+</body>
+</html>
